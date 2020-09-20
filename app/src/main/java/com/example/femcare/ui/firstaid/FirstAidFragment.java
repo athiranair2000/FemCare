@@ -1,4 +1,4 @@
-package com.example.femcare.ui.gallery;
+package com.example.femcare.ui.firstaid;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.femcare.R;
 
-public class GalleryFragment extends Fragment {
+public class FirstAidFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private FirstAidViewModel firstaidViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        firstaidViewModel =
+                ViewModelProviders.of(this).get(FirstAidViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_firstaid, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        firstaidViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

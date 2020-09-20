@@ -1,4 +1,4 @@
-package com.example.femcare.ui.slideshow;
+package com.example.femcare.ui.diet;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.femcare.R;
 
-public class SlideshowFragment extends Fragment {
+public class DietFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private DietViewModel dietViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        dietViewModel =
+                ViewModelProviders.of(this).get(DietViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_diet, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        dietViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
